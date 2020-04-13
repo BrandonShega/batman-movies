@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
       const result = await this.movieService.searchMovies('Batman');
       this.movies = await Promise.all(result.map(movie => this.movieService.getMovie(movie.imdbID)));
       this.originalMovies = this.movies;
-      console.log(this.movies);
     } catch (error) {
       this.notificationService.show(error);
     }
